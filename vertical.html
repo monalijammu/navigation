@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Navigation</title>
+    <style>
+        /* Styles (as provided previously) */
+header{
+    justify-content: center;
+    color: #04AA6D;
+    display:flex;
+}
+
+        .horizontal-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        .horizontal-nav li {
+            margin: 0 2.5px;
+        }
+
+        .horizontal-nav li:first-child {
+            margin-left: 0;
+        }
+
+        .horizontal-nav li:last-child {
+            margin-right: 0;
+        }
+
+        .horizontal-nav li a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .horizontal-nav li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .horizontal-nav li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .horizontal-nav .nav-text {
+            display: block;
+            padding: 5px 0;
+        }
+
+        /* Styles for the vertical navigation */
+        .vertical-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 150px;
+            height: auto;
+            background-color: #f1f1f1;
+        }
+
+        .vertical-nav li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .vertical-nav li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+        .vertical-nav li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .vertical-nav li {
+            text-align: center;
+        }
+
+        .vertical-nav .nav-text {
+            display: block;
+            padding: 5px 0;
+        }
+
+        /* Example of how to position them */
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .vertical-nav {
+            margin-right: 140px;
+        }
+
+        .dropdown-content{
+            display:none;
+            position:absolute;
+            background-color: #f1f1f1;
+            min-width:160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index:1;
+        }
+
+        .dropdown-content a{
+            color:black;
+            padding:12px 16px;
+            text-decoration: none;
+            display:block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover{
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content{
+            display:block;
+        }
+
+        div.gallery{
+            margin:5px;
+            border:1px solid #ccc;
+            float:left;
+            width: 180px;
+        }
+
+        div.gallery:hover {
+            border:1px solid #777;
+        }
+
+        div.gallery img{
+            width:180px;
+            height:180px;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        div.news h1{
+            color:#04AA6D;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            font-size: 50px;
+        }
+
+        div.news ul{
+            margin:auto;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        div.contact h1{
+            color:#04AA6D;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            font-size: 50px;
+        }
+
+        div.contact li{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header id="home-section"><h1>HERITAGE SITES</h1></header>
+<section class="horizontal-nav">
+
+    
+    <ul>
+        <li><a class="active" href="#home-section"><span class="nav-text">Home</span></a></li>
+        <li><a href="#news-section"><span class="nav-text">Trip Details</span></a></li>
+        <li><a href="#contact-section"><span class="nav-text">Timings</span></a></li>
+        
+    </ul>
+</section>
+
+    <div class="container">
+        <div class="vertical-nav">
+            <ul>
+                <li><a class="active" href="#home-section"><span class="nav-text">Home</span></a></li>
+                <li><a href="#news-section"><span class="nav-text">Trip Details</span></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Research</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link1</a>
+                        <a href="#">Link2</a>
+                        <a href="#">Link3</a>
+                    </div>
+                </li>
+                <li><a href="#contact-section"><span class="nav-text">Timings</span></a></li>
+                
+
+            </ul>
+        </div>
+
+        <div class="gallery">
+            <a target="_blank" href="https://www.google.com/maps/dir//Charminar+Rd,+Char+Kaman,+Ghansi+Bazaar,+Hyderabad,+Telangana+500002/@17.3615467,78.3922627,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb978a6e1a939b:0xcb5a69e4aaf113fb!2m2!1d78.4746645!2d17.3615636?hl=en&entry=ttu&g_ep=EgoyMDI1MDQxMy4wIKXMDSoASAFQAw%3D%3D">
+              <img src="charminar.jpg" alt="HTML TUTORIAL" width="600" height="400">
+            </a>
+            <div class="desc">CLICK ME FOR CHARMINAR DIRECTIONS</div>
+          </div>
+        <div class="gallery">
+            <a target="_blank" href="https://www.google.com/maps/dir//Khair+Complex,+Ibrahim+Bagh,+Hyderabad,+Telangana+500008/@17.3841839,78.3195074,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb968ea6aea98f:0x6b76ecdfd65a335a!2m2!1d78.4019092!2d17.3842008?hl=en&entry=ttu&g_ep=EgoyMDI1MDQxMy4wIKXMDSoASAFQAw%3D%3D">
+              <img src="golconda.jpg" alt="CSS TUTORIAL" width="600" height="400">
+            </a>
+            <div class="desc">CLICK ME FOR GOLKONDA FORT DIRECTIONS</div>
+        </div>
+        <div class="gallery">
+            <a target="_blank" href="https://www.google.com/maps/dir//Naubat+Pahad,+Ambedkar+Colony,+Khairtabad,+Hyderabad,+Telangana+500063/@17.4062198,78.3866583,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb975dd124c005:0x59439ffad6e0298e!2m2!1d78.4690601!2d17.4062367?hl=en&entry=ttu&g_ep=EgoyMDI1MDQxMy4wIKXMDSoASAFQAw%3D%3D">
+              <img src="birla mandir.jpg" alt="JAVASCRIPT TUTORIAL" width="600" height="400">
+            </a>
+            <div class="desc">CLICK ME FOR BIRLA MANDIR DIRECTIONS</div>
+          </div>
+        <div class="gallery">
+            <a target="_blank" href="https://www.google.com/maps/dir//Darulshifa,+Hyderabad,+Telangana+500002/@17.3715915,78.3978421,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb9787e263d7bb:0x353b934b9b69a041!2m2!1d78.4802439!2d17.3716084?hl=en&entry=ttu&g_ep=EgoyMDI1MDQxMy4wIKXMDSoASAFQAw%3D%3D">
+              <img src="salar_jung.jpg" alt="PYTHON TUTORIAL" width="600" height="400">
+            </a>
+            <div class="desc">CLICK ME FOR SALAR JUNG MUSEUM DIRECTIONS</div>
+          </div>
+        <div class="gallery">
+            <a target="_blank" href="https://www.google.com/maps/dir//Plot+No-+1269,+Road+No.+12,+Bhavani+Nagar,+Banjara+Hills,+Hyderabad,+Telangana+500034/@17.4151665,78.3437151,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb96d70ff8b6f3:0xde370030b7d7d2fe!2m2!1d78.4261169!2d17.4151834?hl=en&entry=ttu&g_ep=EgoyMDI1MDQxMy4wIKXMDSoASAFQAw%3D%3D">
+              <img src="jagannath.jpg" alt="JAVA TUTORIAL" width="600" height="400">
+            </a>
+            <div class="desc">CLICK ME FOR JAGANNATH SWAMY TEMLE DIRECTIONS</div>
+          </div>
+
+    </div>
+
+    <section id="news-section">
+         <div class="container">
+            <div class="news">
+                <h1>TRIP DETAILS</h1>
+
+                <ul>
+                    <li><a href="https://www.tripadvisor.in/Attraction_Review-g297586-d320668-Reviews-Charminar-Hyderabad_Hyderabad_District_Telangana.html">Updates about charminar</a></li>
+                    <li><a href="https://www.tripadvisor.in/Attraction_Review-g297586-d1021934-Reviews-Birla_Mandir-Hyderabad_Hyderabad_District_Telangana.html">Updates about golconda fort</a></li>
+                    <li><a href="https://www.tripadvisor.in/Attraction_Review-g297586-d1021934-Reviews-Birla_Mandir-Hyderabad_Hyderabad_District_Telangana.html">Updates about birla mandir</a></li>
+                    <li><a href="https://www.tripadvisor.in/Attraction_Review-g297586-d320681-Reviews-Salar_Jung_Museum-Hyderabad_Hyderabad_District_Telangana.html">Updates about salarjung_museum</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section">
+        <div class="container">
+            <div class="contact">
+                 <h1>TIMINGS</h1>
+                 <li>charminar:9:00 AM - 5:30 PM</li>
+                 <li>Golconda Fort:9:00 AM - 5:00 PM</li>
+                 <li>Birla Mandir:7:00 AM - 12:00 PM, 2:00 PM - 9:00 PM</li>
+                 <li>Salarjung Museum:10:00 AM - 5:00 PM</li>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
